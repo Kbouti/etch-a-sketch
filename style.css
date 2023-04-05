@@ -17,7 +17,6 @@ body {
     width:500px;
 
 
-
 }
 
 .innerBox {
@@ -37,4 +36,18 @@ body {
 
 .hovered {
 background-color: rgb(34, 202, 202);
+box-shadow: 5px 5px;
+}
+
+#rpsButton {
+    margin: 2em;
+    background-color: #247e27; /* Green */
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;;
 }

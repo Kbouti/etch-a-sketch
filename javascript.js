@@ -1,8 +1,14 @@
-const innerBox_div = document.getElementsByClassName(`innerBox`);
+const smallbox_div = document.getElementsByClassName(`innerBox`);
+const rpsButton_button = document.getElementById(`rpsButton`);
 
-innerBox_div[0].addEventListener(`click`, function(){
-    console.log(`clicked box`);
-    innerBox_div[0].classList.add("hovered");
+smallbox_div[0].addEventListener('click', function(){
+    console.log(`clicked`)
+    activateBox(0);
+})
+
+smallbox_div[1].addEventListener('click', function(){
+    console.log(`clicked 1`)
+    activateBox(1);
 })
 
 
@@ -10,15 +16,13 @@ innerBox_div[0].addEventListener(`click`, function(){
 
 
 
-
-
-const standAlone_div = document.querySelector(`.standAlone`);
-
-standAlone_div.addEventListener('click', function(){
-    console.log(`clicked standAlone`);
+rpsButton_button.addEventListener(`click`, function(){
+    open(`https://kbouti.github.io/rock-paper-scissors/`);
 })
 
-standAlone_div.addEventListener("mouseover", function(){
-    console.log(`hovered`);
-})
 
+
+
+function activateBox(i){
+    smallbox_div[i].classList.add(`hovered`);
+}

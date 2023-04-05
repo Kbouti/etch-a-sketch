@@ -1,16 +1,18 @@
-const newDiv = document.createElement(`div`);
+const innerBox_div = document.getElementsByClassName(`innerBox`);
+/*
+innerBox_div.addEventListener(`click`, function(){
+    console.log(`hover`);
+})
+*/
 
-newDiv.classList.add(`redBox`);
 
-document.body.appendChild(newDiv);
 
-const body =document.querySelector(`body`);
+const standAlone_div = document.querySelector(`.standAlone`);
 
-body.addEventListener(`click`, function(){
-    console.log(`You clicked me`)
-    const buttonMade = document.createElement(`div`);
-    buttonMade.classList.add(`greenBox`);
-    document.body.appendChild(buttonMade);
+standAlone_div.addEventListener('click', function(){
+    console.log(`clicked standAlone`);
 })
 
-console.log(`did I make an optical illusion?`);
+standAlone_div.addEventListener("mouseover", function(){
+    console.log(`hovered`);
+})

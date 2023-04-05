@@ -1,7 +1,7 @@
 const smallbox_div = document.getElementsByClassName(`innerBox`);
 const rpsButton_button = document.getElementById(`rpsButton`);
 
-
+const clearButton_button = document.getElementById(`clearButton`);
 
 
 
@@ -9,7 +9,7 @@ rpsButton_button.addEventListener(`click`, function(){
     open(`https://kbouti.github.io/rock-paper-scissors/`);
 })
 
-
+clearButton_button.addEventListener(`click`, clearBoxes);
 
 
 function activateBox(i){
@@ -23,17 +23,13 @@ function deActivateBox(i){
 
 
 
-
-
-
-
-
-
 function clearBoxes(){
-    smallbox_div[0].classList.remove(`clicked`);
-    smallbox_div[1].classList.remove(`clicked`);
+    for(let i = 0; i < 17; i++){
+        deActivateBox(i);
+    }
 
 }
+
 
 function addListenerToBox(i){
     smallbox_div[i].addEventListener('click', function(){
@@ -52,3 +48,6 @@ for (let i = 0; i < 17; i++) {
 }
 }
 applyAll();
+
+
+

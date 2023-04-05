@@ -1,9 +1,14 @@
 const innerBox_div = document.getElementsByClassName(`innerBox`);
-/*
-innerBox_div.addEventListener(`click`, function(){
-    console.log(`hover`);
+
+innerBox_div[0].addEventListener(`click`, function(){
+    console.log(`clicked box`);
+    innerBox_div[0].classList.add("hovered");
 })
-*/
+
+
+
+
+
 
 
 
@@ -16,3 +21,4 @@ standAlone_div.addEventListener('click', function(){
 standAlone_div.addEventListener("mouseover", function(){
     console.log(`hovered`);
 })
+

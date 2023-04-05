@@ -16,9 +16,6 @@ body {
     height:500px;
     width:500px;
     box-shadow: 5px 5px;
-
-
-
 }
 
 .innerBox {
@@ -51,7 +48,7 @@ button {
 }
 
 
-.hovered {
-    background-color: rgb(34, 202, 202);
+.hover {
+    background-color: rgb(44, 118, 118);
 
 }

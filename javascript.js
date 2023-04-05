@@ -45,9 +45,11 @@ function addListenerToBox(i){
 function applyAll() {
 for (let i = 0; i < 17; i++) {
     addListenerToBox(i);
+
 }
 }
 applyAll();
 
-
-
+smallbox_div[4].addEventListener(`mouseenter`, function(){
+    console.log(`mouse enter`);
+})

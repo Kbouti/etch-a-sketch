@@ -24,28 +24,9 @@ function deActivateBox(i){
 
 
 
-smallbox_div[0].addEventListener('click', function(){
-    console.log(`clicked`)
-    if (smallbox_div[0].classList.contains(`clicked`)){
-        deActivateBox(0);
-    }
-    else {
-    activateBox(0);
-    }
-})
 
-smallbox_div[1].addEventListener('click', function(){
-    console.log(`clicked`)
-    if (smallbox_div[1].classList.contains(`clicked`)){
-        deActivateBox(1);
-    }
-    else {
-    activateBox(1);
-    }
-})
-/*      setTimeout(deActivateBox(1), 300);
 
-*/
+
 
 
 function clearBoxes(){
@@ -53,3 +34,21 @@ function clearBoxes(){
     smallbox_div[1].classList.remove(`clicked`);
 
 }
+
+function addListenerToBox(i){
+    smallbox_div[i].addEventListener('click', function(){
+        if (smallbox_div[i].classList.contains(`clicked`)){
+            deActivateBox(i);
+        }
+        else {
+        activateBox(i);
+        }
+    })
+}
+
+function applyAll() {
+for (let i = 0; i < 17; i++) {
+    addListenerToBox(i);
+}
+}
+applyAll();

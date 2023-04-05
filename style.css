@@ -25,16 +25,12 @@ body {
     
 }
 
-.standAlone{
-    font-size: larger;
-    margin:50px;
-    border:4px solid salmon;
-    border-radius: 10%;
-    
+h1 {
+    text-shadow: 3em;
 }
 
 
-.hovered {
+.clicked {
 background-color: rgb(34, 202, 202);
 box-shadow: 5px 5px;
 }
@@ -50,4 +46,10 @@ box-shadow: 5px 5px;
     display: inline-block;
     font-size: 16px;
     border-radius: 10px;;
+}
+
+
+.hovered {
+    background-color: rgb(34, 202, 202);
+
 }

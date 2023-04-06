@@ -19,23 +19,37 @@ function clearBoxes(){
     for(let i = 0; i < 17; i++){
         deActivateBox(i);
     }
-
 }
 
 
 
 
-function createInnerBox (){
-    const innerBox = document.createElement(`div`);
-    innerBox.classList.add(`innerBox`)
-    gridBox_div.appendChild(innerBox);
+
+function createSmallBox (){
+    const smallBox = document.createElement(`div`);
+    smallBox.classList.add(`smallBox`)
+    gridBox_div.appendChild(smallBox);
 
 }
 function makeBoxes(n){
-for (i = 0; i < n; i++){
-    createInnerBox();
-    console.log(`made a box`);
-}
+    for (i = 0; i < n; i++){
+    createSmallBox();
+    }
 }
 
 makeBoxes(256);
+
+
+
+function click(i){
+    if (smallbox_div[i].classList.contains(`clicked`)){
+        deActivateBox(i);
+    } else {
+        activateBox(i);
+    }
+}  
+
+
+
+smallbox_div[0].addEventListener('click', click(0));
+

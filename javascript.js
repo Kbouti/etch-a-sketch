@@ -1,34 +1,27 @@
-const smallbox_div = document.getElementsByClassName(`innerBox`);
 const rpsButton_button = document.getElementById(`rpsButton`);
-const gridBox_div = document.getElementById(`gridBox`);
-const clearButton_button = document.getElementById(`clearButton`);
-
-
-
 rpsButton_button.addEventListener(`click`, function(){
     open(`https://kbouti.github.io/rock-paper-scissors/`);
 })
-clearButton_button.addEventListener(`click`, clearBoxes);
-function activateBox(i){
-    smallbox_div[i].classList.add(`clicked`);
+
+const gridBox_div = document.getElementById(`gridBox`);
+
+function createSmallBox(n){
+    let smallBox_div = document.createElement(`div`);
+    smallBox_div.classList.add(`smallBox`);
+    smallBox_div.id.add()
 }
-function deActivateBox(i){
-    smallbox_div[i].classList.remove(`clicked`);
-}
-function clearBoxes(){
-    for(let i = 0; i < 17; i++){
-        deActivateBox(i);
-    }
-}
+
+
+
 
 
 
 
 
 function createSmallBox (){
-    const smallBox = document.createElement(`div`);
-    smallBox.classList.add(`smallBox`)
-    gridBox_div.appendChild(smallBox);
+    const smallBox_div = document.createElement(`div`);
+    smallBox_div.classList.add(`smallBox`)
+    gridBox_div.appendChild(smallBox_div);
 
 }
 function makeBoxes(n){
@@ -40,16 +33,4 @@ function makeBoxes(n){
 makeBoxes(256);
 
 
-
-function click(i){
-    if (smallbox_div[i].classList.contains(`clicked`)){
-        deActivateBox(i);
-    } else {
-        activateBox(i);
-    }
-}  
-
-
-
-smallbox_div[0].addEventListener('click', click(0));
 

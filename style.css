@@ -3,6 +3,11 @@ body {
     display:flex;
     align-items:center;
     flex-direction:column;
+    font-family:sans-serif, 'Courier New', Courier, monospace;
+}
+
+button {
+    cursor: pointer;
 }
 
 
@@ -18,11 +23,12 @@ body {
     box-shadow: 5px 5px;
     overflow: auto;
     resize:both;
+    border: 3px solid black;
 }
 
 .smallBox {
-    outline: solid rgb(149, 149, 149);
-    padding:10px;
+    outline: solid .1px rgb(136, 69, 69);
+    
     
 }
 

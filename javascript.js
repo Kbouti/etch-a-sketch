@@ -7,15 +7,11 @@ const gridBox_div = document.getElementById(`gridBox`);
 const smallBox_div = document.getElementsByClassName(`smallBox`);
 const clearButton_div = document.getElementById(`clearButton`);
 
-function makeElement(){
+function makeElements(n){
+for (i=0; i <= n; i++){
     const newElement = document.createElement(`div`);
     newElement.classList.add(`smallBox`);
     gridBox_div.appendChild(newElement);
-}
-
-function makeElements(n){
-for (i=0; i <= n; i++){
-    makeElement()
 }
 
 }

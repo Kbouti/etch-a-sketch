@@ -28,6 +28,7 @@ button {
 
 .smallBox {
     outline: solid .1px rgb(136, 69, 69);
+    cursor:pointer;
     
     
 }
@@ -56,7 +57,7 @@ button {
 }
 
 
-.hover {
+.hovered {
     background-color: rgb(44, 118, 118);
 
 }

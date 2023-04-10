@@ -17,8 +17,14 @@ function makeElements(n){
 for (i=0; i <= n; i++){
     makeElement()
 }
+
+}
+function gridBoard(size){
+    gridBox_div.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    gridBox_div.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 }
 
+gridBoard(16);
 makeElements(256);
 
 function addClickListenerToBox(n){

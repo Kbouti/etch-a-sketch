@@ -5,15 +5,7 @@ rpsButton_button.addEventListener(`click`, function(){
 
 const gridBox_div = document.getElementById(`gridBox`);
 const smallBox_div = document.getElementsByClassName(`smallBox`);
-
-
-//create an element
-//apply name
-//apply class
-//apply event listeners
-
-
-
+const clearButton_div = document.getElementById(`clearButton`);
 
 function makeElement(){
     const newElement = document.createElement(`div`);
@@ -27,21 +19,9 @@ for (i=0; i <= n; i++){
 }
 }
 
-
-function onHover(i){
-    console.log(`hovered box ${i}`)
-    //smallBox_div[i]
-}
-
-
-
-
-
 makeElements(256);
 
-
-
-function addListenerToBox(n){
+function addClickListenerToBox(n){
     smallBox_div[n].addEventListener('click', function(){
         if (smallBox_div[n].classList.contains(`clicked`)){
             smallBox_div[n].classList.remove(`clicked`);
@@ -52,58 +32,13 @@ function addListenerToBox(n){
     })
 }
 
-
+function addHoverListenerToBox(n){
+    smallBox_div[n].addEventListener('mouseenter',function(){
+        smallBox_div[n].classList.add(`hovered`)
+    } )
+}
 
 for (i = 0;i < smallBox_div.length; i++){
-    addListenerToBox(i);
+    addClickListenerToBox(i);
+    addHoverListenerToBox(i);
 }
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-function createSmallBox(n){
-    const smallBox = document.createElement(`div`);
-    smallBox.classList.add(`smallBox`);
-    smallBox.setAttribute(`id`, `smallBox${n}`)
-    gridBox.appendChild(smallBox);
-
-}
-function makeBoxes(n){
-    for (i = 0; i < n; i++){
-    createSmallBox(n);
-    }
-}
-
-makeBoxes(256);
-
-function activateBox(n){
-smallBox_div[n].addEventListener('mouseenter', function(){
-    console.log(`hovered box ${n}`);
-    smallBox_div[n].classList.add(`hovered`);
-})
-smallBox_div[n].addEventListener('mouseleave', function(){
-    console.log(`left box ${n}`);
-    smallBox_div[n].classList.remove(`hovered`);
-})
-}
-
-activateBox(0);
-
-function activateAllBoxes(n){
-    for (i = 0; i <=n;i++){
-        activateBox(n);
-    }
-}
-
-activateAllBoxes(256);
-
-*/

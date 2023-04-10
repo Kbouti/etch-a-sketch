@@ -15,13 +15,18 @@ for (i=0; i <= n; i++){
 }
 
 }
-function gridBoard(size){
+function makeGrid(size){
     gridBox_div.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     gridBox_div.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 }
 
-gridBoard(16);
-makeElements(256);
+
+function makeBoard(input){
+    makeGrid(input);
+    makeElements(input * input);
+}
+
+makeBoard(16);
 
 function addClickListenerToBox(n){
     smallBox_div[n].addEventListener('click', function(){
@@ -54,3 +59,5 @@ clearButton_div.addEventListener(`click`, function(){
         smallBox_div[i].classList.remove(`clicked`, `hovered`);
     }
 })
+
+

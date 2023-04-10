@@ -42,3 +42,10 @@ for (i = 0;i < smallBox_div.length; i++){
     addClickListenerToBox(i);
     addHoverListenerToBox(i);
 }
+
+
+clearButton_div.addEventListener(`click`, function(){
+    for (i =0 ; i < smallBox_div.length; i++){
+        smallBox_div[i].classList.remove(`clicked`, `hovered`);
+    }
+})

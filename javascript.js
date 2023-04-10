@@ -36,6 +36,9 @@ function addHoverListenerToBox(n){
     smallBox_div[n].addEventListener('mouseenter',function(){
         smallBox_div[n].classList.add(`hovered`)
     } )
+    smallBox_div[n].addEventListener('mouseleave', function(){
+        smallBox_div[n].classList.remove('hovered');
+    })
 }
 
 for (i = 0;i < smallBox_div.length; i++){

@@ -5,9 +5,7 @@ const clearButton_div = document.getElementById(`clearButton`);
 const resizerButton_button = document.getElementById(`resizerButton`);
 
 rpsButton_button.addEventListener(`click`, () => open(`https://kbouti.github.io/rock-paper-scissors/`))
-
 clearButton_div.addEventListener(`click`, clearBoxes)
-
 resizerButton_button.addEventListener(`click`, userInputSize)
 
 
@@ -77,6 +75,7 @@ function userInputSize(){
     if ((isNaN(sizeInput)) || (sizeInput < 1) || (sizeInput > 100)){
         makeBoard(16);
         alert(`Please enter a number between 1 and 100`);
+        sizeInput = ``; //I'd like to change the input back to blank after a bad input
     }
     else {
         makeBoard(sizeInput);

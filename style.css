@@ -6,12 +6,6 @@ body {
     font-family:sans-serif, 'Courier New', Courier, monospace;
 }
 
-button {
-    cursor: pointer;
-}
-
-
-
 #gridBox {
     margin-left: auto;
     margin-right: auto;
@@ -24,18 +18,18 @@ button {
     overflow: auto;
     resize:both;
     border: 3px solid black;
+    margin-left:30px;
 }
 
 #bodyContent {
-    display:grid;
-    grid-template-columns: 1fr 5fr;
-
-
+    display:flex;
 }
 
 #controlPanel{
     display:flex;
-    flex-direction: column;;
+    flex-direction: column;
+    border: 3px solid black;
+    border-radius: 10px;
 }
 
 .smallBox {
@@ -65,7 +59,8 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius: 10px;;
+    border-radius: 10px;
+    cursor:pointer;
 }
 
 

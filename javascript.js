@@ -75,4 +75,4 @@ clearButton_div.addEventListener(`click`, clearBoxes)
 
 
 
-makeBoard(5);
+makeBoard(16);

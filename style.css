@@ -11,8 +11,10 @@ button {
 }
 
 
+
 #gridBox {
-    margin-top:30px;
+    margin-left: auto;
+    margin-right: auto;
     display:grid;
     grid-row-start:2;
     grid-column-start:2;
@@ -22,6 +24,18 @@ button {
     overflow: auto;
     resize:both;
     border: 3px solid black;
+}
+
+#bodyContent {
+    display:grid;
+    grid-template-columns: 1fr 5fr;
+
+
+}
+
+#controlPanel{
+    display:flex;
+    flex-direction: column;;
 }
 
 .smallBox {

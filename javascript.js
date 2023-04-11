@@ -69,9 +69,7 @@ function addListeners(){
     }
 }
 
-
-
-clearButton_div.addEventListener(`click`, clearBoxes())
+clearButton_div.addEventListener(`click`, clearBoxes)
 
 
 

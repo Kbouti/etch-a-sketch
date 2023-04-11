@@ -1,20 +1,24 @@
 const rpsButton_button = document.getElementById(`rpsButton`);
-rpsButton_button.addEventListener(`click`, function(){
-    open(`https://kbouti.github.io/rock-paper-scissors/`);
-})
-
 const gridBox_div = document.getElementById(`gridBox`);
 const smallBox_div = document.getElementsByClassName(`smallBox`);
 const clearButton_div = document.getElementById(`clearButton`);
+const resizerButton_button = document.getElementById(`resizerButton`);
+
+rpsButton_button.addEventListener(`click`, () => open(`https://kbouti.github.io/rock-paper-scissors/`))
+
+clearButton_div.addEventListener(`click`, clearBoxes)
+
+resizerButton_button.addEventListener(`click`, userInputSize)
+
 
 function makeElements(n){
-for (i=0; i <= n; i++){
-    const newElement = document.createElement(`div`);
-    newElement.classList.add(`smallBox`);
-    gridBox_div.appendChild(newElement);
+    for (i=0; i <= n; i++){
+        const newElement = document.createElement(`div`);
+        newElement.classList.add(`smallBox`);
+        gridBox_div.appendChild(newElement);
+    }
 }
 
-}
 function makeGrid(size){
     gridBox_div.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     gridBox_div.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -28,7 +32,7 @@ function clearBoxes(){
 
 function removeBoxes(){
     let board = document.querySelector(`#gridBox`);
-    let boxes = board.querySelectorAll(`div`)
+    let boxes = board.querySelectorAll(`div`);
     boxes.forEach((div) => div.remove());
 }
 
@@ -40,7 +44,6 @@ function makeBoard(input){
     makeElements(input * input);
     addListeners();
 }
-
 
 function addClickListenerToBox(n){
     smallBox_div[n].addEventListener('click', function(){
@@ -69,10 +72,18 @@ function addListeners(){
     }
 }
 
-clearButton_div.addEventListener(`click`, clearBoxes)
-
-
-
+function userInputSize(){
+    let sizeInput = document.getElementById(`inputBox`).value;
+    if ((isNaN(sizeInput)) || (sizeInput < 1) || (sizeInput > 100)){
+        makeBoard(16);
+        alert(`Please enter a number between 1 and 100`);
+    }
+    else {
+        makeBoard(sizeInput);
+    }
+}
 
 
 makeBoard(16);
+
+

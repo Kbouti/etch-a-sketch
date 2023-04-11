@@ -20,13 +20,27 @@ function makeGrid(size){
     gridBox_div.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 }
 
-
-function makeBoard(input){
-    makeGrid(input);
-    makeElements(input * input);
+function clearBoxes(){
+    for (let i =0 ; i < smallBox_div.length; i++){
+        smallBox_div[i].classList.remove(`clicked`, `hovered`);
+    }
 }
 
-makeBoard(16);
+function removeBoxes(){
+    let board = document.querySelector(`#gridBox`);
+    let boxes = board.querySelectorAll(`div`)
+    boxes.forEach((div) => div.remove());
+}
+
+
+function makeBoard(input){
+    clearBoxes();
+    removeBoxes(); 
+    makeGrid(input);
+    makeElements(input * input);
+    addListeners();
+}
+
 
 function addClickListenerToBox(n){
     smallBox_div[n].addEventListener('click', function(){
@@ -48,16 +62,19 @@ function addHoverListenerToBox(n){
     })
 }
 
-for (i = 0;i < smallBox_div.length; i++){
-    addClickListenerToBox(i);
-    addHoverListenerToBox(i);
+function addListeners(){
+    for (i = 0;i < smallBox_div.length; i++){
+        addClickListenerToBox(i);
+        addHoverListenerToBox(i);
+    }
 }
 
 
-clearButton_div.addEventListener(`click`, function(){
-    for (i =0 ; i < smallBox_div.length; i++){
-        smallBox_div[i].classList.remove(`clicked`, `hovered`);
-    }
-})
+
+clearButton_div.addEventListener(`click`, clearBoxes())
 
 
+
+
+
+makeBoard(5);

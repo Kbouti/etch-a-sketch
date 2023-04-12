@@ -3,11 +3,16 @@ const gridBox_div = document.getElementById(`gridBox`);
 const smallBox_div = document.getElementsByClassName(`smallBox`);
 const clearButton_div = document.getElementById(`clearButton`);
 const resizerButton_button = document.getElementById(`resizerButton`);
+const controlForm_form = document.getElementById(`controlForm`);
+
 
 rpsButton_button.addEventListener(`click`, () => open(`https://kbouti.github.io/rock-paper-scissors/`))
 clearButton_div.addEventListener(`click`, clearBoxes)
 resizerButton_button.addEventListener(`click`, userInputSize)
-
+controlForm_form.addEventListener(`submit`, function(event){
+    event.preventDefault();
+    userInputSize();
+});
 
 function makeElements(n){
     for (i=0; i <= n; i++){

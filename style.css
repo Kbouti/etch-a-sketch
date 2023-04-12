@@ -37,11 +37,19 @@ body {
     font-size: 16px;;
 }
 
+#controlForm{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#inputBox{
+    width: 100;
+}
+
 .smallBox {
     outline: solid .1px rgb(136, 69, 69);
     cursor:pointer;
-    
-    
 }
 
 h1 {
@@ -76,10 +84,25 @@ label {
 .panelButtons {
     padding: 8px 8px;
     width:100px;
+
+
+
+
+
+    margin-top: 1em;
+    background-color: #247e27; /* Green */
+    border: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor:pointer;
+
 }
 
 
 .hovered {
     background-color: rgb(44, 118, 118);
-
 }

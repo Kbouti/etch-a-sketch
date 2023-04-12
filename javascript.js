@@ -9,9 +9,8 @@ const controlForm_form = document.getElementById(`controlForm`);
 rpsButton_button.addEventListener(`click`, () => open(`https://kbouti.github.io/rock-paper-scissors/`))
 clearButton_div.addEventListener(`click`, clearBoxes)
 resizerButton_button.addEventListener(`click`, userInputSize)
-controlForm_form.addEventListener(`submit`, function(event){
+controlForm_form.addEventListener(`submit`, function(event){  //This allows user to submit by clicking the resizer button or hitting enter
     event.preventDefault();
-    userInputSize();
 });
 
 function makeElements(n){
@@ -78,9 +77,7 @@ function addListeners(){
 function userInputSize(){
     let sizeInput = document.getElementById(`inputBox`).value;
     if ((isNaN(sizeInput)) || (sizeInput < 1) || (sizeInput > 100)){
-        makeBoard(16);
-        alert(`Please enter a number between 1 and 100`);
-        sizeInput = ``; //I'd like to change the input back to blank after a bad input
+        alert(`Please enter a number between 1-100`);
     }
     else {
         makeBoard(sizeInput);

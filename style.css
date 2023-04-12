@@ -20,6 +20,7 @@ body {
     border: 3px solid black;
     margin-left:30px;
     border-radius: 10px;
+    
 
 }
 
@@ -35,6 +36,7 @@ body {
     box-shadow: 5px 5px;
     align-items: center;
     font-size: 16px;;
+    background: cadetblue;
 }
 
 #controlForm{
@@ -84,11 +86,6 @@ label {
 .panelButtons {
     padding: 8px 8px;
     width:100px;
-
-
-
-
-
     margin-top: 1em;
     background-color: #247e27; /* Green */
     border: none;
@@ -99,7 +96,6 @@ label {
     font-size: 16px;
     border-radius: 10px;
     cursor:pointer;
-
 }
 
 

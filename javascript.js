@@ -5,7 +5,6 @@ const clearButton_div = document.getElementById(`clearButton`);
 const resizerButton_button = document.getElementById(`resizerButton`);
 const controlForm_form = document.getElementById(`controlForm`);
 
-
 rpsButton_button.addEventListener(`click`, () => open(`https://kbouti.github.io/rock-paper-scissors/`))
 clearButton_div.addEventListener(`click`, clearBoxes)
 resizerButton_button.addEventListener(`click`, userInputSize)
@@ -17,6 +16,12 @@ function makeElements(n){
     for (i=0; i <= n; i++){
         const newElement = document.createElement(`div`);
         newElement.classList.add(`smallBox`);
+
+        newElement.addEventListener('mouseover', ()=> newElement.style.backgroundColor = `rgb(34, 202, 202)`);
+
+
+
+
         gridBox_div.appendChild(newElement);
     }
 }
@@ -26,16 +31,10 @@ function makeGrid(size){
     gridBox_div.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 }
 
-function clearBoxes(){
-    for (let i =0 ; i < smallBox_div.length; i++){
-
-        
+function clearBoxes(){                                  //This will apply the style properties, overriding any class that was set. Now have to make the click or hover effects do thte same. 
+    for (let i =0 ; i < smallBox_div.length; i++){ 
         smallBox_div[i].style.background = "white";
         smallBox_div[i].style.boxShadow = "none";
-
-    //    smallBox_div[i].classList.remove(`clicked`, `hovered`);
-    
-    
     }
 }
 
@@ -46,42 +45,12 @@ function removeBoxes(){
 }
 
 
-function makeBoard(input){
-    clearBoxes();
+function makeBoard(input){              //Removed redundant clearBoxes command
     removeBoxes(); 
     makeGrid(input);
     makeElements(input * input);
-    addListeners();
 }
 
-function addClickListenerToBox(n){
-    smallBox_div[n].addEventListener('click', function(){
-        if (smallBox_div[n].classList.contains(`clicked`)){
-            smallBox_div[n].classList.remove(`clicked`);
-
-          
-        }
-        else {
-            smallBox_div[n].classList.add(`clicked`);
-        }
-    })
-}
-
-function addHoverListenerToBox(n){
-    smallBox_div[n].addEventListener('mouseenter',function(){
-        smallBox_div[n].classList.add(`hovered`)
-    } )
-    smallBox_div[n].addEventListener('mouseleave', function(){
-        smallBox_div[n].classList.remove('hovered');
-    })
-}
-
-function addListeners(){
-    for (i = 0;i < smallBox_div.length; i++){
-        addClickListenerToBox(i);
-        addHoverListenerToBox(i);
-    }
-}
 
 function userInputSize(){
     let sizeInput = document.getElementById(`inputBox`).value;
@@ -95,5 +64,12 @@ function userInputSize(){
 
 
 makeBoard(16);
+let color = `black`;
+smallBox_div[1].addEventListener(`mouseover`, hoverFunction(1))
+
+function hoverFunction(i){
+    smallBox_div[i].style.background = `rgb(34, 202, 202)`;
+}
+
 
 

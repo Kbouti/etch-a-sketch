@@ -12,15 +12,20 @@ controlForm_form.addEventListener(`submit`, function(event){  //This allows user
     event.preventDefault();
 });
 
+
+
+let paintColor = `rgb(34, 202, 202)`;
+
+
+
 function makeElements(n){
     for (i=0; i <= n; i++){
         const newElement = document.createElement(`div`);
         newElement.classList.add(`smallBox`);
 
-        newElement.addEventListener('mouseover', ()=> newElement.style.backgroundColor = `rgb(34, 202, 202)`);
-
-
-
+        newElement.addEventListener('mouseover', function(){
+            newElement.style.backgroundColor = paintColor;
+        })
 
         gridBox_div.appendChild(newElement);
     }
@@ -64,12 +69,4 @@ function userInputSize(){
 
 
 makeBoard(16);
-let color = `black`;
-smallBox_div[1].addEventListener(`mouseover`, hoverFunction(1))
-
-function hoverFunction(i){
-    smallBox_div[i].style.background = `rgb(34, 202, 202)`;
-}
-
-
 

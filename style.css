@@ -50,6 +50,7 @@ body {
 }
 
 .smallBox {
+    background: white;
     outline: solid .1px rgb(136, 69, 69);
     cursor:pointer;
 }

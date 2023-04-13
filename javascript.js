@@ -28,7 +28,14 @@ function makeGrid(size){
 
 function clearBoxes(){
     for (let i =0 ; i < smallBox_div.length; i++){
-        smallBox_div[i].classList.remove(`clicked`, `hovered`);
+
+        
+        smallBox_div[i].style.background = "white";
+        smallBox_div[i].style.boxShadow = "none";
+
+    //    smallBox_div[i].classList.remove(`clicked`, `hovered`);
+    
+    
     }
 }
 
@@ -51,6 +58,8 @@ function addClickListenerToBox(n){
     smallBox_div[n].addEventListener('click', function(){
         if (smallBox_div[n].classList.contains(`clicked`)){
             smallBox_div[n].classList.remove(`clicked`);
+
+          
         }
         else {
             smallBox_div[n].classList.add(`clicked`);

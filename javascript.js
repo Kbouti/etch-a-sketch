@@ -17,6 +17,7 @@ const coralButton_input = document.getElementById(`coralButton`);
 const marigoldButton_input = document.getElementById(`marigoldButton`);
 
 const purpleButton_input = document.getElementById(`purpleButton`);
+const greenButton_input = document.getElementById(`greenButton`);
 
 
 const rainbowButton_input = document.getElementById(`rainbowButton`);
@@ -33,12 +34,10 @@ const b = randomBetween(0, 255);
 const teal = `rgb(34, 202, 202)`;
 const coral = `rgb(255, 127, 80)`;
 const marigold = `rgb(236, 213, 41)`;
-
 const purple = `rgb(199, 138, 243)`;
-
+const green = `rgb(81, 130, 53)`;
 const rainbow = `rgb(${r},${g},${b})`;
 const eraser = `white`;
-
 let paintColor = teal;
 
 
@@ -46,17 +45,10 @@ let paintColor = teal;
 tealButton_input.addEventListener('click', ()=> paintColor = teal)
 coralButton_input.addEventListener('click',  ()=> paintColor = coral)
 marigoldButton_input.addEventListener('click',  ()=> paintColor = marigold)
-
 purpleButton_input.addEventListener('click',  ()=> paintColor = purple)
-
-
+greenButton_input.addEventListener('click',  ()=> paintColor = green)
 rainbowButton_input.addEventListener('click',  ()=> paintColor = rainbow)
-
 eraserButton_input.addEventListener('click',  ()=> paintColor = eraser)
-
-
-
-
 
 
 

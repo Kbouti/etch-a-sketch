@@ -18,16 +18,33 @@ const marigoldButton_input = document.getElementById(`marigoldButton`);
 const rainbowButton_input = document.getElementById(`rainbowButton`);
 const eraserButton_input = document.getElementById(`eraserButton`);
 
+
+const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+const r = randomBetween(0, 255);
+const g = randomBetween(0, 255);
+const b = randomBetween(0, 255);
+
+
+let paintColor;
+
+const teal = `rgb(34, 202, 202)`;
+const coral = `rgb(255, 127, 80)`;
+const marigold = `rgb(211, 190, 32)`;
+const rainbow = `rgb(${r},${g},${b})`;
+const eraser = `white`;
+
+
 if (tealButton_input.checked){
     console.log(`teal button is checked`);
+    paintColor = teal;
 }
 
 else if (coralButton_input.checked){
     console.log(`coral button is checked`);
+    paintColor = coral;
 }
 
 
-let paintColor = `rgb(34, 202, 202)`;
 
 
 function makeElements(n){

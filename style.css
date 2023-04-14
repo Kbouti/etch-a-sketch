@@ -103,3 +103,8 @@ label {
 .hovered {
     background-color: rgb(44, 118, 118);
 }
+
+#colorSelector {
+    display:flex;
+    flex-direction:column;
+}

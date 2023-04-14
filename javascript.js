@@ -25,24 +25,30 @@ const g = randomBetween(0, 255);
 const b = randomBetween(0, 255);
 
 
-let paintColor;
 
 const teal = `rgb(34, 202, 202)`;
 const coral = `rgb(255, 127, 80)`;
-const marigold = `rgb(211, 190, 32)`;
+const marigold = `rgb(236, 213, 41)`;
 const rainbow = `rgb(${r},${g},${b})`;
 const eraser = `white`;
 
+let paintColor = teal;
 
-if (tealButton_input.checked){
-    console.log(`teal button is checked`);
-    paintColor = teal;
-}
 
-else if (coralButton_input.checked){
-    console.log(`coral button is checked`);
-    paintColor = coral;
-}
+
+tealButton_input.addEventListener('click', ()=> paintColor = teal)
+coralButton_input.addEventListener('click',  ()=> paintColor = coral)
+
+marigoldButton_input.addEventListener('click',  ()=> paintColor = marigold)
+
+rainbowButton_input.addEventListener('click',  ()=> paintColor = rainbow)
+
+eraserButton_input.addEventListener('click',  ()=> paintColor = eraser)
+
+
+
+
+
 
 
 

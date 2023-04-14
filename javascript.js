@@ -25,9 +25,9 @@ const eraserButton_input = document.getElementById(`eraserButton`);
 
 
 const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
-const r = randomBetween(0, 255);
-const g = randomBetween(0, 255);
-const b = randomBetween(0, 255);
+let r = randomBetween(0, 255);
+let g = randomBetween(0, 255);
+let b = randomBetween(0, 255);
 
 
 
@@ -35,8 +35,8 @@ const teal = `rgb(34, 202, 202)`;
 const coral = `rgb(255, 127, 80)`;
 const marigold = `rgb(236, 213, 41)`;
 const purple = `rgb(199, 138, 243)`;
-const green = `rgb(81, 130, 53)`;
-const rainbow = `rgb(${r},${g},${b})`;
+const green = `rgb(58, 131, 11)`;
+let rainbow = `rgb(${r},${g},${b})`;
 const eraser = `white`;
 let paintColor = teal;
 
@@ -58,14 +58,15 @@ function makeElements(n){
     for (i=0; i <= n; i++){
         const newElement = document.createElement(`div`);
         newElement.classList.add(`smallBox`);
-
-        newElement.addEventListener('mouseover', function(){
-            newElement.style.backgroundColor = paintColor;
-        })
-
+        newElement.addEventListener('mouseover', colorSquare)
         gridBox_div.appendChild(newElement);
     }
 }
+
+function colorSquare(){
+    this.style.backgroundColor = paintColor;
+}
+
 
 function makeGrid(size){
     gridBox_div.style.gridTemplateColumns = `repeat(${size}, 1fr)`;

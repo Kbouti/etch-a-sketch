@@ -12,10 +12,22 @@ controlForm_form.addEventListener(`submit`, function(event){  //This allows user
     event.preventDefault();
 });
 
+const tealButton_input = document.getElementById(`tealButton`);
+const coralButton_input = document.getElementById(`coralButton`);
+const marigoldButton_input = document.getElementById(`marigoldButton`);
+const rainbowButton_input = document.getElementById(`rainbowButton`);
+const eraserButton_input = document.getElementById(`eraserButton`);
+
+if (tealButton_input.checked){
+    console.log(`teal button is checked`);
+}
+
+else if (coralButton_input.checked){
+    console.log(`coral button is checked`);
+}
 
 
 let paintColor = `rgb(34, 202, 202)`;
-
 
 
 function makeElements(n){

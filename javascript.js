@@ -15,28 +15,25 @@ controlForm_form.addEventListener(`submit`, function(event){  //This allows user
 const tealButton_input = document.getElementById(`tealButton`);
 const coralButton_input = document.getElementById(`coralButton`);
 const marigoldButton_input = document.getElementById(`marigoldButton`);
-
 const purpleButton_input = document.getElementById(`purpleButton`);
 const greenButton_input = document.getElementById(`greenButton`);
-
-
 const rainbowButton_input = document.getElementById(`rainbowButton`);
 const eraserButton_input = document.getElementById(`eraserButton`);
 
-
+/*
 const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 let r = randomBetween(0, 255);
 let g = randomBetween(0, 255);
 let b = randomBetween(0, 255);
-
+*/
 
 
 const teal = `rgb(34, 202, 202)`;
-const coral = `rgb(255, 127, 80)`;
+const coral = `rgb(255, 101, 83)`;
 const marigold = `rgb(236, 213, 41)`;
 const purple = `rgb(199, 138, 243)`;
-const green = `rgb(58, 131, 11)`;
-let rainbow = `rgb(${r},${g},${b})`;
+const green = `rgb(97, 211, 97)`;
+let rainbow //= `rgb(${r},${g},${b})`;
 const eraser = `white`;
 let paintColor = teal;
 
@@ -64,6 +61,10 @@ function makeElements(n){
 }
 
 function colorSquare(){
+
+    // if (color === `rainbow`){
+    //     this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    // }
     this.style.backgroundColor = paintColor;
 }
 
@@ -73,7 +74,7 @@ function makeGrid(size){
     gridBox_div.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 }
 
-function clearBoxes(){                                  //This will apply the style properties, overriding any class that was set. Now have to make the click or hover effects do thte same. 
+function clearBoxes(){                                 
     for (let i =0 ; i < smallBox_div.length; i++){ 
         smallBox_div[i].style.background = "white";
         smallBox_div[i].style.boxShadow = "none";
@@ -87,7 +88,7 @@ function removeBoxes(){
 }
 
 
-function makeBoard(input){              //Removed redundant clearBoxes command
+function makeBoard(input){          
     removeBoxes(); 
     makeGrid(input);
     makeElements(input * input);
